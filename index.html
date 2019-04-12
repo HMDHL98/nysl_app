@@ -41,7 +41,7 @@
                 <!--FILTROS [3]-->
                 <div v-if="apartados[3]">
                     <div class="d-flex justify-content-around container">
-                        <input type="text" id="tabInfo" class="col"><button type="button" @click="filter()">Search</button>
+                        <select><option value="all">All</option><option value="sept">Sept</option><option value="oct">Oct</option></select><input type="text" id="tabInfo" class="col"><button type="button" @click="filter()">Search</button>
                     </div>
                 </div>
             </nav>
