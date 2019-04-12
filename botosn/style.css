@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'botons';
+  src:  url('fonts/botons.eot?la0u9d');
+  src:  url('fonts/botons.eot?la0u9d#iefix') format('embedded-opentype'),
+    url('fonts/botons.ttf?la0u9d') format('truetype'),
+    url('fonts/botons.woff?la0u9d') format('woff'),
+    url('fonts/botons.svg?la0u9d#botons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="ico-"], [class*=" ico-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'botons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ico-home:before {
+  content: "\e900";
+}
+.ico-contact:before {
+  content: "\e945";
+}
+.ico-location:before {
+  content: "\e947";
+}
+.ico-return:before {
+  content: "\e963";
+}
+.ico-options:before {
+  content: "\e994";
+}

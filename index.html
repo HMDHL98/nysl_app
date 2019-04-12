@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Title-->
+        <link rel="shortcut icon" href="/IMG/nysl_logo.png">
+        <title>Northside Youth Soccer League</title>
+        <!--Font Type-->
+        <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+        <!--Icons-->
+        <link rel="stylesheet" href="botosn/style.css">
+        <!--Bootstrap 4-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!--My Styles-->
+        <link rel="stylesheet" href="my_style.css">
+    </head>
+    <body>
+        <div id="app">
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top nav-shadow w-100" height="80px">
+                    <div class="d-flex justify-content-between">
+                        <h1 id="navbarDropdown" class="align-self-center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="ico-options"></span></h1>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a @click="cambiarApartado(5)" class="dropdown-item" href="#">Register Now!</a>
+                            <a @click="cambiarApartado(3)" class="dropdown-item" href="#">Information</a>
+                            <a @click="cambiarApartado(4)" class="dropdown-item" href="#">Rules</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Close</a>
+                        </div>
+                        <h3 style="font-family: 'Satisfy', cursive" class="align-self-center">Northside Youth Soccer League</h3>
+                        <img src="IMG/image.png" height="40px">
+                    </div>
+                </nav>
+            </header>
+            <!--Contenido-->
+            <nav v-show="!apartados[0]" class="navbar-expand-lg navbar-light bg-light w-100 p-1 nav-sm-shadow text-center">
+                <h3 class="container title" style="font-family: 'Satisfy', cursive">{{ title }}</h3>
+            </nav>
+            <br>
+            <div class="container">
+                <!--HOME [0]-->
+                <div v-if="apartados[0]" class="d-inline-block">
+                    <span @click="cambiarApartado(1)" class="ico-contact nav-link isco"></span>
+                    <span @click="cambiarApartado(2)" class="ico-location nav-link isco"></span>
+                </div>
+                <!--CONTACT [1]-->
+                <div v-if="apartados[1]">
+                    <div class="text-justify">
+                        <h3>About Us</h3>
+                        <br>
+                        <b>Mission</b>
+                        <br>
+                        To support young athlets living in Chicago's northside neighborhoods, who have an interest in learning and playing soccer, with oportunities to learn and practice skills relates to the game of soccer, specificallyt those skills araund team cooperation and good sportsmanship.
+                        <br>
+                        <br>
+                        <b>Vision</b>
+                        <br>
+                        The Northside Youth Soccer League aspires to develop strong, Well-rounded and mindful athlets through the building of character, self-discipline, and leadership.
+                        <br>
+                        <br>
+                        <b>General Information</b>
+                        <br>
+                        The Northside Youth Soccer League was established in 1996 to provide athlets residing in Chicago's northside neighborhoods on enviroment in which to learn and play soccer. To be a member of NYSL, you mast be between the ages of 4-12 and resides in a Chicago's northside neighborhood NYSL is ran by a small full-time stoff, and relies on the generous volunteer time of parents and previous league members.
+                        <br>
+                        <br>
+                        <b>Contact</b>
+                        <br>
+                        Please email us at <a href="mailto:nysl@chisoccer.org">nysl@chisoccer.org</a>.
+                        <br>
+                        We will reply to your email as soon as we can!
+                    </div>
+                </div>
+                <!--LOCATIONS [2]-->
+                <div v-if="apartados[2]">
+                    <table class="table table-striped table-bordered w-100">
+                        <thead>
+                            <th class="d-flex justify-content-between">
+                                Select Any Place:
+                                <select id="slctMap" @change="seleccionarMapa()">
+                                    <option value="aj">AJ Katzenmaier</option>
+                                    <option value="north">North Elementary</option>
+                                    <option value="greenbay">Greenbay</option>
+                                    <option value="howard">Howard A Yeager</option>
+                                    <option value="majorie">Majorie P Hart</option>
+                                    <option value="south">South Elementary</option>
+                                </select>
+                            </th>
+                        </thead>
+                        <tbody v-show="maping" v-for="i in places">
+                            <tr>
+                                <td class="text-center align-middle"><h3>{{ i.place }}</h3></td>
+                            </tr>
+                            <tr>
+                                <td><iframe style="border:0" class="col nav-sm-shadow" :src="i.map" allowfullscreen></iframe></td>
+                            </tr>
+                        </tbody>
+                        <tbody v-show="!maping" v-for="i in filtred">
+                            <tr>
+                                <td class="text-center align-middle"><h3>{{ i.place }}</h3></td>
+                            </tr>
+                            <tr>
+                                <td><iframe style="border:0" class="col nav-sm-shadow" :src="i.map" allowfullscreen></iframe></td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+                <!--FILTROS [3]-->
+                <div v-if="apartados[3]">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light nav-shadow w-100" height="80px">
+                        <div class="d-flex justify-content-between">
+                            <select id="slct"><option value="date">Date</option><option value="id">Team</option><option value="place">Location</option></select><input type="text" id="tabInfo"><button type="button" @click="filter()">Search</button>
+                        </div>
+                    </nav>
+                </div>
+                <!--INFORMATION [3]-->
+                <div v-show="this.apartados[3]">
+                    <h3>SEPTEMBER</h3>
+                    * All games take place on Saturday.
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <th>DATE</th>
+                            <th>TEAMS</th>
+                            <th>LOCATIONS</th>
+                            <th>TIMES</th>
+                        </thead>
+                        <tbody v-for="i in games.calendar_sept">
+                            <tr>
+                                <td rowspan="2">{{ i.date }}</td>
+                                <td>{{ i.match_1 }}</td>
+                                <td>{{ i.location_1 }}</td>
+                                <td>{{ i.time_1 }}</td>
+                                <tr>
+                                    <td>{{ i.match_2 }}</td>
+                                    <td>{{ i.location_2 }}</td>
+                                    <td>{{ i.time_2 }}</td>
+                                </tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <br>
+                    <h3>OCTOBER</h3>
+                    * All games take place on Saturday.
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <th>DATE</th>
+                            <th>TEAMS</th>
+                            <th>LOCATIONS</th>
+                            <th>TIMES</th>
+                        </thead>
+                        <tbody v-for="i in games.calendar_oct">
+                            <td rowspan="2">{{ i.date }}</td>
+                            <td>{{ i.match_1 }}</td>
+                            <td>{{ i.location_1 }}</td>
+                            <td>{{ i.time_1 }}</td>
+                            <tr>
+                                <td>{{ i.match_2 }}</td>
+                                <td>{{ i.location_2 }}</td>
+                                <td>{{ i.time_2 }}</td>
+                            </tr>                          
+                        </tbody>
+                    </table>
+                </div>
+                <!--RULES [4]-->
+                <div v-if="apartados[4]">
+                    <h1 class="text-center">EN PROCESO</h1>
+                </div>
+                <!--REGISTER FORM [5]-->
+                <div v-if="apartados[5]">
+                    <div class="card bg-light">
+                        <article class="card-body mx-auto" style="max-width: 400px;">
+                            <p class="text-center">Get started with your free account</p>
+                            <form>
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-user">Full Name</i></span>
+                                        </div>
+                                    <input name="" class="form-control" placeholder="Full name" type="text">
+                                </div> <!-- form-group// -->
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-envelope">Email Adress</i> </span>
+                                        </div>
+                                    <input name="" class="form-control" placeholder="Email address" type="email">
+                                </div> <!-- form-group// -->
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-phone">Phone Number</i> </span>
+                                    </div>
+                                    <input name="" class="form-control" placeholder="Phone number" type="text">
+                                </div>
+                                <!-- form-group end.// -->
+                                <div class="form-group input-group">
+                                    <input class="form-control" placeholder="Create password" type="password">
+                                </div> <!-- form-group// -->
+                                <div class="form-group input-group">
+                                    <input class="form-control" placeholder="Repeat password" type="password">
+                                </div> <!-- form-group// -->                                      
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-secondary bg-secondary btn-block">Register</button>
+                                </div> <!-- form-group// -->      
+                                <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
+                            </form>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <footer v-show="!apartados[0]">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom nav-shadow d-flex justify-content-between">
+                    <h1><span v-on:click="cambiarApartado(0)" class="ico-home nav-link"></span></h1>
+                    <h1><span v-on:click="cambiarApartado(1)" class="ico-contact nav-link"></span></h1>
+                    <h1><span @click="cambiarApartado(2)" class="ico-location nav-link"></span></h1>
+                    <h1><span v-on:click="clickRetroceso(retroceso[retroceso.length - 2])" class="ico-return nav-link"></span></h1>
+                </nav>
+            </footer>
+        </div>
+    </body>
+        <!--Vue_JS-->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="vue.js"></script>
+</html>

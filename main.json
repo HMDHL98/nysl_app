@@ -1,0 +1,119 @@
+{
+    "titles": ["HOME","CONTACT","LOCATIONS","INFORMATION","RULES","REGISTER FORM"],
+    "locations": [
+        {
+            "place": "AJ Katzenmaier",
+            "value": "aj",
+            "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.7808660976257!2d-87.86492878504059!3d42.325872445253424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880f932fbc6ba7cd%3A0xcf2bbe275c6da815!2sA+J+Katzenmaier+Elementary+School!5e0!3m2!1ses!2ses!4v1549234388804"
+        },
+        {
+            "place": "North Elementary",
+            "value": "north",
+            "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94408.47167658563!2d-87.92392148038375!3d42.31555182011494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfe6df83b0f197ed6!2sNorth+Elementary+School!5e0!3m2!1ses!2ses!4v1549234878874"
+        },
+        {
+            "place": "Greenbay",
+            "value": "greenbay",
+            "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2845.7224532899713!2d-88.06135088417606!3d44.500353541089375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb435f5184dfbb1ae!2sGreen+Bay+Packers%2C+Inc.!5e0!3m2!1ses!2ses!4v1549233698962"
+        },
+        {
+            "place": "Howard A Yeager",
+            "value": "howard",
+            "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2950.2698766737826!2d-87.85606978504094!3d42.31544224591159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880feccac26b07c5%3A0x8b51fa5d6efe771a!2sHoward+A.+Yeager+School+(PREK-K)!5e0!3m2!1ses!2ses!4v1549234552564"
+        },
+        {
+            "place": "Majorie P Hart",
+            "value": "majorie",
+            "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.7201256054186!2d-87.84787868504053!3d42.327167845171644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fecd0628e1bb5%3A0x9a4d5f9aafd42e02!2sMarjorie+P+Hart+Elementary+School!5e0!3m2!1ses!2ses!4v1549233553586"
+        },
+        {
+            "place": "South Elementary",
+            "value": "south",
+            "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d377632.25222332426!2d-88.13407293480608!3d42.31582420698433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8ce88e90b96bbec1!2sSouth+Elementary+School!5e0!3m2!1ses!2ses!4v1549234989113"
+        }
+    ],
+    "games": {
+        "calendar_sept": [
+            {
+                "date": "9/01",
+                "match_1": "U1 and U4",
+                "location_1": "AJ Katzenmaier",
+                "time_1": "9:30 a.m.",
+                "match_2": "U3 and U2",
+                "location_2": "Greenbay",
+                "time_2": "1:00 p.m."
+            },
+            {
+                "date": "9/08",
+                "match_1": "U5 and U6",
+                "location_1": "Howard A Yeager",
+                "time_1": "9:30 a.m.",
+                "match_2": "U6 and U1",
+                "location_2": "Marjorie P Hart",
+                "time_2": "1:00 p.m."
+            },
+            {
+                "date": "9/15",
+                "match_1": "U2 and U4",
+                "location_1": "North",
+                "time_1": "9:30 a.m.",
+                "match_2": "U3 and U5",
+                "location_2": "AJ Katzenmaier",
+                "time_2": "1:00 p.m."
+            },
+            {
+                "date": "9/22",
+                "match_1": "U1 and U3",
+                "location_1": "South",
+                "time_1": "9:30 a.m.",
+                "match_2": "U2 and U6",
+                "location_2": "Howard A Yeager",
+                "time_2": "1:00 p.m."
+            },
+            {
+                "date": "9/29",
+                "match_1": "U4 and U5",
+                "location_1": "Greenbay",
+                "time_1": "9:30 a.m."
+            }
+        ],  
+        "calendar_oct": [
+            {
+                "date": "10/06",
+                "match_1": "U2 and U5",
+                "location_1": "Marjorie P Hart",
+                "time_1": "9:30 a.m.",
+                "match_2": "U1 and U6",
+                "location_2": "South",
+                "time_2": "1:00 p.m."
+            },
+            {
+                "date": "10/08",
+                "match_1": "U3 and U4",
+                "location_1": "Howard A Yeager",
+                "time_1": "9:30 a.m.",
+                "match_2": "U5 and U1",
+                "location_2": "Greenbay",
+                "time_2": "1:00 p.m."
+            },
+            {
+                "date": "10/20",
+                "match_1": "U6 and U3",
+                "location_1": "North",
+                "time_1": "9:30 a.m.",
+                "match_2": "U2 and U4",
+                "location_2": "Marjorie P Hart",
+                "time_2": "1:00 p.m."
+            },
+            {
+                "date": "10/27",
+                "match_1": "U3 and U1",
+                "location_1": "AJ Katzenmaier",
+                "time_1": "9:30 a.m.",
+                "match_2": "U5 and U6",
+                "location_2": "Howard A Yeager",
+                "time_2": "1:00 p.m."
+            }
+        ]
+    }
+}
