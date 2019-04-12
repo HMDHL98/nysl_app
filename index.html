@@ -49,7 +49,8 @@
             <br>
             <div class="container">
                 <!--HOME [0]-->
-                <div v-if="apartados[0]" class="d-inline-block">
+                <div v-if="apartados[0]" class="d-inline-block align-content-center">
+                    <span @click="cambiarApartado(3)" class="ico-options nav-link isco"></span>
                     <span @click="cambiarApartado(1)" class="ico-contact nav-link isco"></span>
                     <span @click="cambiarApartado(2)" class="ico-location nav-link isco"></span>
                 </div>
@@ -171,7 +172,7 @@
                 </div>
                 <!--RULES [4]-->
                 <div v-if="apartados[4]">
-                    <h1 class="text-center">Cariño si ves esto es que te quiero!! Soy Hamed y tu deberias ser Hasnae(jesna, hesna, jasna, jess....)</h1>
+                    <h1 class="text-center">En proceso</h1>
                 </div>
                 <!--REGISTER FORM [5]-->
                 <div v-if="apartados[5]">
