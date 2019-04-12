@@ -10,6 +10,7 @@ var app = new Vue ({
         games: [],
         select: "",
         filtred: [],
+        month: [true, true]
     },
     methods: {
         seleccionarMapa(){
@@ -48,11 +49,24 @@ var app = new Vue ({
         },
         filter(){
             let vl_flt = document.getElementById('tabInfo').value;
-            let v_slct = document.getElementById('slct').value;
             console.log(vl_flt);
             if((v_slct === 'id' || v_slct === 'date' || v_slct === 'place') && (vl_flt === this.games.calendar_sept[0].date)){
                 console.log(vl_flt);
             }
+        },
+        selectedMonth(){
+            let v_slct = Number(document.getElementById('slct').value);
+            console.log(v_slct);
+            for(i in this.month){
+                this.month[i] = false;
+            };
+            if(v_slct === NaN){
+                for(i in this.month){
+                    this.month[i] = true;
+                }
+            }else{
+                this.month[v_slct] = true;
+            };
         }
     }
 })
