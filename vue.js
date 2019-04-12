@@ -47,25 +47,26 @@ var app = new Vue ({
                 this.retroceso = [0]
             }
         },
-        filter(){
-            let vl_flt = document.getElementById('tabInfo').value;
-            console.log(vl_flt);
-            if((v_slct === 'id' || v_slct === 'date' || v_slct === 'place') && (vl_flt === this.games.calendar_sept[0].date)){
-                console.log(vl_flt);
-            }
-        },
+        // filter(){
+        //     let vl_flt = document.getElementById('tabInfo').value;
+        //     console.log(vl_flt);
+        //     if((v_slct === 'id' || v_slct === 'date' || v_slct === 'place') && (vl_flt === this.games.calendar_sept[0].date)){
+        //         console.log(vl_flt);
+        //     }
+        // },
         selectedMonth(){
             let v_slct = Number(document.getElementById('slct').value);
             console.log(v_slct);
-            for(i in this.month){
-                this.month[i] = false;
+            for(let i = 0; i < this.month.length; i++){
+                this.$set(this.month, i, false);
             };
-            if(v_slct === NaN){
-                for(i in this.month){
-                    this.month[i] = true;
+            if(isNaN(v_slct)){
+                for(let i = 0; i < this.month.length; i++){
+                    this.$set(this.month, i, true);
+
                 }
             }else{
-                this.month[v_slct] = true;
+                this.$set(this.month, v_slct, true);
             };
         }
     }
