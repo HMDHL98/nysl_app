@@ -17,7 +17,7 @@ var app = new Vue ({
             this.select = document.getElementById('slctMap').value;
             let locationFilter = [];
             for(i = 0; i < this.places.length; i++){
-                if(this.places[i].value === this.select){
+                if(this.places[i].value === this.select || 'all' === this.select){
                     locationFilter.push(this.places[i]);
                 }
             }

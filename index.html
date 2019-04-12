@@ -40,8 +40,8 @@
                 <h3 class="container title" style="font-family: 'Satisfy', cursive">{{ title }}</h3>
                 <!--FILTROS [3]-->
                 <div v-if="apartados[3]">
-                    <div class="d-flex justify-content-between">
-                        <select id="slct"><option value="date">Date</option><option value="id">Team</option><option value="place">Location</option></select><input type="text" id="tabInfo"><button type="button" @click="filter()">Search</button>
+                    <div class="d-flex justify-content-around container">
+                        <input type="text" id="tabInfo"><button type="button" @click="filter()">Search</button>
                     </div>
                 </div>
             </nav>
@@ -86,6 +86,7 @@
                             <th class="d-flex justify-content-between">
                                 Select Any Place:
                                 <select id="slctMap" @change="seleccionarMapa()">
+                                    <option value="all">All Locations</option>
                                     <option value="aj">AJ Katzenmaier</option>
                                     <option value="north">North Elementary</option>
                                     <option value="greenbay">Greenbay</option>
